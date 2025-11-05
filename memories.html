@@ -280,10 +280,49 @@
 /* لو عايز نفس الارتفاع على الموبايل كمان */
 @media (max-width: 768px) {
   #memoriesCarousel .carousel-item img {
-    height: 400px; /* يفضل تسيبه نفس الرقم عشان يفضل ثابت */
+    height: 450px; /* يفضل تسيبه نفس الرقم عشان يفضل ثابت */
   }
 }
 
+/* 📱 موبايلات صغيرة جدًا (320px - 400px) */
+@media (max-width: 400px) {
+  #memoriesCarousel .carousel-item {
+    height: 400px;
+  }
+}
+
+/* 📱 موبايلات متوسطة (401px - 576px) */
+@media (min-width: 401px) and (max-width: 576px) {
+  #memoriesCarousel .carousel-item {
+    height: 420px;
+  }
+}
+
+/* 📱 تابلت صغير (577px - 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  #memoriesCarousel .carousel-item {
+    height: 450px;
+  }
+}
+
+/* 💻 لابتوب وشاشات متوسطة */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #memoriesCarousel .carousel-item {
+    height: 500px;
+  }
+}
+
+/* 🖥️ شاشات كبيرة */
+@media (min-width: 1025px) {
+  #memoriesCarousel .carousel-item {
+    height: 550px;
+  }
+}
+@media (max-width: 768px) {
+    #memoriesCarousel .carousel-item img {
+        height: 393px;
+    }
+}
 
 
   </style>
