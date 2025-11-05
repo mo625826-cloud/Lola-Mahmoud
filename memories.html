@@ -247,82 +247,15 @@
     width: 100%;
   }
 }
-/* 🎠 Carousel ثابت الارتفاع */
-#memoriesCarousel {
-  width: 100%;
-  max-width: 400px;
-  height:max-content;
-  max-height: fit-content;
-  margin: 0 auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
-
-/* الصور بارتفاع ثابت */
-#memoriesCarousel .carousel-item img {
-  width: 100%;
-  height: 400px; /* ← ← هنا الارتفاع الثابت */
-  object-fit: cover; /* يمنع التشويه */
-  object-position: center;
-  transition: transform 0.4s ease;
-}
-
-/* تأثير بسيط أثناء الحركة */
-#memoriesCarousel .carousel-item.active img {
-  transform: scale(1);
-}
-#memoriesCarousel .carousel-item-next img,
-#memoriesCarousel .carousel-item-prev img {
-  transform: scale(1.05);
-}
-
-/* لو عايز نفس الارتفاع على الموبايل كمان */
-@media (max-width: 768px) {
-  #memoriesCarousel .carousel-item img {
-    height: 450px; /* يفضل تسيبه نفس الرقم عشان يفضل ثابت */
-  }
-}
-
-/* 📱 موبايلات صغيرة جدًا (320px - 400px) */
-@media (max-width: 400px) {
-  #memoriesCarousel .carousel-item {
-    height: 400px;
-  }
-}
-
-/* 📱 موبايلات متوسطة (401px - 576px) */
-@media (min-width: 401px) and (max-width: 576px) {
-  #memoriesCarousel .carousel-item {
-    height: 420px;
-  }
-}
-
-/* 📱 تابلت صغير (577px - 768px) */
-@media (min-width: 577px) and (max-width: 768px) {
-  #memoriesCarousel .carousel-item {
-    height: 450px;
-  }
-}
-
-/* 💻 لابتوب وشاشات متوسطة */
-@media (min-width: 769px) and (max-width: 1024px) {
-  #memoriesCarousel .carousel-item {
-    height: 500px;
-  }
-}
-
-/* 🖥️ شاشات كبيرة */
-@media (min-width: 1025px) {
-  #memoriesCarousel .carousel-item {
-    height: 550px;
-  }
-}
-@media (max-width: 768px) {
-    #memoriesCarousel .carousel-item img {
-        height: 393px;
-    }
-}
+.carousel img{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:contain;
+      background:white;
+      border-radius:14px;
+    }ً
+    .carousel-control-prev,
+    .carousel-control-next{filter:invert(1);}
 
 
   </style>
@@ -379,36 +312,60 @@
 </div>
 
 
-<!-- Carousel -->
-<div id="memoriesCarousel" class="carousel slide animate__animated animate__fadeInUp" data-bs-ride="carousel">
+<!-- <div id="memoriesCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="صور الذكريات">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="media/memo/IMG_7699.JPG" class="d-block w-100 memory-img" alt="Memory 1" />
+      <div class="img-frame">
+        <img src="media/memo/IMG_7699.JPG" alt="Memory 1" />
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="media/memo/IMG_7723.JPG" class="d-block w-100 memory-img" alt="Memory 2" />
+      <div class="img-frame">
+        <img src="media/memo/IMG_7723.JPG" alt="Memory 2" />
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="media/memo/IMG_7724.JPG" class="d-block w-100 memory-img" alt="Memory 3" />
+      <div class="img-frame">
+        <img src="media/memo/IMG_7724.JPG" alt="Memory 3" />
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="media/memo/IMG_7726.JPG" class="d-block w-100 memory-img" alt="Memory 4" />
+      <div class="img-frame">
+        <img src="media/memo/IMG_7726.JPG" alt="Memory 3" />
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="media/memo/IMG_7727.JPG" class="d-block w-100 memory-img" alt="Memory 5" />
+      <div class="img-frame">
+        <img src="media/memo/IMG_7727.JPG" alt="Memory 3" />
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="media/memo/IMG_7731.JPG" class="d-block w-100 memory-img" alt="Memory 5" />
+      <div class="img-frame">
+        <img src="media/memo/IMG_7730.JPG" alt="Memory 3" />
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="media/memo/IMG_7732.JPG" class="d-block w-100 memory-img" alt="Memory 5" />
+      <div class="img-frame">
+        <img src="media/memo/IMG_7732.JPG" alt="Memory 3" />
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="media/memo/IMG_7730.JPG" class="d-block w-100 memory-img" alt="Memory 5" />
+      <div class="img-frame">
+        <img src="media/memo/IMG_7731.JPG" alt="Memory 3" />
+      </div>
     </div>
-  </div>
+    <!-- أضف باقي الصور بنفس النمط -->
+  <!-- </div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#memoriesCarousel" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#memoriesCarousel" data-bs-slide="prev" aria-label="السابق">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#memoriesCarousel" data-bs-slide="next" aria-label="التالي">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div> --> -->
+
+  <!-- <button class="carousel-control-prev" type="button" data-bs-target="#memoriesCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
@@ -416,8 +373,27 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
+</div> -->
 
+<div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="media\memo\IMG_7699.JPG" alt=""></div>
+            <div class="carousel-item active"><img src="media\memo\IMG_7723.JPG" alt=""></div>
+            <div class="carousel-item active"><img src="media\memo\IMG_7724.JPG" alt=""></div>
+            <div class="carousel-item active"><img src="media\memo\IMG_7726.JPG" alt=""></div>
+            <div class="carousel-item active"><img src="media\memo\IMG_7727.JPG" alt=""></div>
+            <div class="carousel-item active"><img src="media\memo\IMG_7730.JPG" alt=""></div>
+            <div class="carousel-item active"><img src="media\memo\IMG_7731.JPG" alt=""></div>
+            <div class="carousel-item active"><img src="media\memo\IMG_7732.JPG" alt=""></div>
+           
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
   <!-- Timer -->
   <div class="timer" id="loveTimer"></div>
 
